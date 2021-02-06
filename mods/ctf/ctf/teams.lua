@@ -448,6 +448,9 @@ function ctf.clear_assists(victim)
 end
 
 function ctf.add_assist(victim, attacker, damage)-- player names
+	if not kill_assists[victim] then
+		ctf.clear_assists(victim)
+	end
 	kill_assists[victim]["players"][attacker] = (kill_assists[victim]["players"][attacker] or 0) + damage
 	kill_assists[victim]["is_empty"] = false
 end

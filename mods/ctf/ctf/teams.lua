@@ -572,5 +572,7 @@ minetest.register_on_punchplayer(function(player, hitter,
 			end
 			return false
 		end
+
+		kill_assist.add_assist(pname, hname, damage)
 	end
 end)

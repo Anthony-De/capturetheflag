@@ -420,7 +420,8 @@ end
 ctf.register_on_killedplayer(function(victim, killer, _, toolcaps)
 	local reward = calculateKillReward(victim, killer, toolcaps)
 	reward = math.floor(reward * 100) / 100
-	ctf.reward_assists(victim, killer, reward, (victim == killer))
+
+	kill_assist.reward_assists(victim, killer, reward)
 end)
 
 minetest.register_on_dieplayer(function(player)
